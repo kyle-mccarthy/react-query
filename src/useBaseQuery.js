@@ -76,7 +76,7 @@ export function useBaseQuery(queryKey, queryVariables, queryFn, config = {}) {
 
   // Create the placeholder instance of this query (suspense needs this to
   // to fire things like onSuccess/onError/onSettled)
-  updateInstance(true)
+  React.useEffect(() => updateInstance(true))
 
   // After mount, subscribe to the query
   React.useEffect(() => {

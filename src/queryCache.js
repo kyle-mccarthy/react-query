@@ -289,9 +289,6 @@ export function makeQueryCache() {
     }
 
     query.updateInstance = instance => {
-      // Filter out any placeholder instances created for suspense
-      query.instances = query.instances.filter(d => !d.isPlaceholder)
-
       let found = query.instances.find(d => d.id === instance.id)
 
       if (found) {
